@@ -10,6 +10,7 @@ summary(model1)
 #for educ. We have to maintain that fatheduc is uncorrelated with u. 
 #The second requirement is that educ and fatheduc are correlated.
 #We can check this very easily using a simple regression of educ on fatheduc
+#stage1
 model2<-lm(educ~fatheduc, data=mroz)
 summary(model2)
 mroz$educ_hat<-fitted.values(model2)
