@@ -17,6 +17,7 @@ mroz$educ_hat<-fitted.values(model2)
 #stage2
 model3<-lm(lwage~educ_hat, data=mroz)
 summary(model3)
+#direct iv
 iv<-ivreg(lwage~educ|fatheduc, data=mroz)
 summary(iv)
 coeftest(iv,vcov=vcovHC, type="HC1")
