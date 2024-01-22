@@ -14,6 +14,7 @@ summary(model1)
 model2<-lm(educ~fatheduc, data=mroz)
 summary(model2)
 mroz$educ_hat<-fitted.values(model2)
+#stage2
 model3<-lm(lwage~educ_hat, data=mroz)
 summary(model3)
 iv<-ivreg(lwage~educ|fatheduc, data=mroz)
