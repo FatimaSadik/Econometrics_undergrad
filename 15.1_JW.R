@@ -1,9 +1,12 @@
 #Estimating the Return to Education for Married Women
+install.packages("wooldridge")
+install.packages("AER")
 library("wooldridge")
 library(AER)
 data(mroz)
 head(mroz)
 model1<-lm(lwage~educ,data=mroz)
+model11<-lm(mroz$lwage~mroz$educ)
 coefficients(model1)
 summary(model1)
 #we use father’s education (fatheduc) as an instrumental variable 
