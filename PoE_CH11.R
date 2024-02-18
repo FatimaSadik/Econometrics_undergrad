@@ -16,3 +16,12 @@ seq_1<-lm(q~p_hat+ps+di,data=truffles)
 summary(seq_1)
 seq_2<-lm(q~p_hat+pf,data=truffles)
 summary(seq_2)
+#ALTERNATIVELY
+
+D <- q~p+ps+di
+S <- q~p+pf
+sys <- list(D,S)
+instr <- ~ps+di+pf
+truff.sys <- systemfit(sys, inst=instr,
+                       method="2SLS", data=truffles)
+summary(truff.sys)
