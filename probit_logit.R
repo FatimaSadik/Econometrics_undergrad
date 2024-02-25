@@ -39,4 +39,5 @@ allmean
 install.packages("mfx")
 
 library(mfx)
-logitmfx(coke~pratio+disp_coke+disp_pepsi, data=coke)
+matmean_logit<-logitmfx(coke~pratio+disp_coke+disp_pepsi, data=coke)
+matmean_probit<-probitmfx(coke~pratio+disp_coke+disp_pepsi, data=coke)
