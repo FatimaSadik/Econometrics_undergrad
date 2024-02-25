@@ -28,8 +28,8 @@ summary(truff.sys)
 # elasticity
 truffles$ln_p<-log(truffles$p)
 truffles$ln_q<-log(truffles$q)
-D1 <- ln_q~ln_p+ps+di
-S1 <- ln_q~ln_p+pf
+D1 <- ln_p~ln_q+ps+di
+S1 <- ln_p~ln_q+pf
 sys1 <- list(D1,S1)
 instr1 <- ~ps+di+pf
 truff.sys1 <- systemfit(sys1, inst=instr1,
