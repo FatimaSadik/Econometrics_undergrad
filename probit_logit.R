@@ -2,6 +2,7 @@ install.packages("remotes")
 remotes::install_github("ccolonescu/PoEdata")
 library(PoEdata)
 library(stargazer)
+install.packages("stargazer")
 data("coke")
 head(coke)
 lpm<-lm(coke~pratio+disp_coke+disp_pepsi,data=coke)
@@ -40,4 +41,6 @@ install.packages("mfx")
 
 library(mfx)
 matmean_logit<-logitmfx(coke~pratio+disp_coke+disp_pepsi, data=coke)
+matmean_logit
 matmean_probit<-probitmfx(coke~pratio+disp_coke+disp_pepsi, data=coke)
+matmean_probit
