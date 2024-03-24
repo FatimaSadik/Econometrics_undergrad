@@ -32,3 +32,26 @@ plot(x = diff_beertax,
      col = "steelblue")
 # add the regression line to plot
 abline(fatal_diff_mod, lwd = 1.5)
+
+install.packages("plm")
+library("plm")
+
+#We can simply use the function lm() to obtain an estimate of 1.
+fatal_fe_lm_mod <- lm(fatal_rate ~ beertax + state - 1, data = Fatalities)
+fatal_fe_lm_mod
+
+# obtain demeaned data
+Fatalities_demeaned <- with(Fatalities,
+                            data.frame(fatal_rate = fatal_rate - ave(fatal_rate, state),
+                                       beertax = beertax - ave(beertax, state)))
+# estimate the regression
+summary(lm(fatal_rate ~ beertax - 1, data = Fatalities_demeaned))
+
+# estimate the fixed effects regression with plm()
+fatal_fe_mod <- plm(fatal_rate ~ beertax,
+                    data = Fatalities,
+                    index = c("state", "year"),
+                    model = "within")
+
+# print summary using robust standard errors
+coeftest(fatal_fe_mod, vcov. = vcovHC, type = "HC1")
