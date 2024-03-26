@@ -55,3 +55,25 @@ fatal_fe_mod <- plm(fatal_rate ~ beertax,
 
 # print summary using robust standard errors
 coeftest(fatal_fe_mod, vcov. = vcovHC, type = "HC1")
+ 
+##time fixed effects
+
+fatal_tfe_lm_mod <- lm(fatal_rate ~ beertax + year - 1, data = Fatalities)
+fatal_tfe_lm_mod
+# print summary using robust standard errors
+coeftest(fatal_tfe_mod, vcov. = vcovHC, type = "HC1")
+
+##time and state fixed effects both
+
+fatal_stfe_lm_mod <- lm(fatal_rate ~ beertax + state+year - 1, data = Fatalities)
+fatal_stfe_lm_mod
+# print summary using robust standard errors
+coeftest(fatal_stfe_mod, vcov. = vcovHC, type = "HC1")
+
+# via plm()
+fatal_tefe_mod <- plm(fatal_rate ~ beertax,
+                      data = Fatalities,
+                      index = c("state", "year"),
+                      model = "within",
+                      effect = "twoways")
+coeftest(fatal_tefe_mod, vcov = vcovHC, type = "HC1")
