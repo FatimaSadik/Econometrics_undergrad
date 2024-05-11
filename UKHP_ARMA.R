@@ -3,12 +3,14 @@ library(tseries)
 library(forecast)
 UKHP <- read.csv("C:/Users/fatimasadik/OneDrive - Institute of Business Administration/Econometrics/Spring24_AE2/Econometrics_undergrad/UKHP.csv")
 plot(UKHP$Average_House_Price,type="l")
-acf(UKHP$Average_House_Price,lag.max = 12)
+acf(UKHP$Average_House_Price,lag.max = 20)
 UKHP$LHP<-log(UKHP$Average_House_Price)
+#plot lhp
+#acf of lhp
 DLHP<-diff(UKHP$LHP)
 plot(DLHP,type="l")
-acf(DLHP,lag.max = 12)
-pacf(DLHP,lag.max=12)
+acf(DLHP,lag.max = 15)
+pacf(DLHP,lag.max=15)
 #acf dies slowly
 #It can be deduced that the frst six autocorrelation coeffcients (then nine through twelve) and the first
 #two partial autocorrelation coeffcients (then nine, eleven and twelve) are significant
