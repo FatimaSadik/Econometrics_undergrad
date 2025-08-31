@@ -1,15 +1,46 @@
-#Lab 1
-#Note: Update the R
-#In this course we will use the companion package for Wooldridge's textbook
-#Install Packages and loading them in R
-install.packages("wooldridge")
-library(wooldridge)
-#load dataframe from the package. Note, the command will not work if the package wooldridge is not installed and unpacked properly
-data("Fertility")
-#To see the summary statistics for all columns
-summary(Fertility)
-#To see summary stats for one particular column
-summary(Fertility$morekids)
-#To generate a new variable/column and store it in the Fertility dataframe
-Fertility$age2<-Fertility$age^2
+# -------------------------------
+# Lab 1 - Wooldridge Dataset Work
+# -------------------------------
 
+# 1. Install packages (Run only once)
+install.packages("wooldridge")
+install.packages("dplyr")
+install.packages("ggplot2")
+
+# 2. Load libraries
+library(wooldridge)
+library(dplyr)
+library(ggplot2)
+# 3. Load dataframe from the wooldridge package
+data("fertil1")
+
+# 4. View summary statistics for all columns
+summary(fertil1)
+
+
+# 5. Create a new variable 'age2' (age squared)
+fertil1$age2 <- fertil1$age^2
+
+# 6. Filter data for year == 1972
+fertil1_1972 <- fertil1 %>%
+  filter(year == 72)
+
+# 8. Check the filtered data
+summary(fertil1_1972)
+head(fertil1_1972)
+unique(fertil1_1972$year)
+names(fertil1_1972)
+# Histogram of age
+ggplot(fertil1_1972, aes(x = age)) +
+  geom_histogram(binwidth = 2, fill = "skyblue", color = "black") +
+  labs(title = "Distribution of Age (1972)", x = "Age", y = "Count")
+
+ggplot(fertil1_1972, aes(y = educ)) +
+  geom_boxplot(fill = "skyblue", color = "black") +
+  labs(
+    title = "Boxplot of Education Years (1972)",
+    y = "Years of Education"
+  )
+
+
+  
