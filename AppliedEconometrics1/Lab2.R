@@ -18,6 +18,7 @@ y_hat <- fitted(ols_model)
 u_hat <- residuals(ols_model)
 
 sum(u_hat)
+
 cov(x, u_hat)
 
 mean_y <- mean(y)
