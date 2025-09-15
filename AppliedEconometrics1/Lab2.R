@@ -1,5 +1,5 @@
 # Install if not available
-# install.packages("wooldridge")
+#install.packages("wooldridge")
 # install.packages("dplyr")
 
 library(wooldridge)
@@ -16,6 +16,7 @@ y <- wage1$wage
 x <- wage1$educ
 y_hat <- fitted(ols_model)
 u_hat <- residuals(ols_model)
+# verifying algebraic properties of OLS
 
 sum(u_hat)
 

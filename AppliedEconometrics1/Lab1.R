@@ -17,6 +17,7 @@ data("fertil1")
 # 4. View summary statistics for all columns
 summary(fertil1)
 
+summary(fertil1$age)
 
 # 5. Create a new variable 'age2' (age squared)
 fertil1$age2 <- fertil1$age^2
@@ -31,6 +32,7 @@ head(fertil1_1972)
 unique(fertil1_1972$year)
 names(fertil1_1972)
 # Histogram of age
+
 ggplot(fertil1_1972, aes(x = age)) +
   geom_histogram(binwidth = 2, fill = "skyblue", color = "black") +
   labs(title = "Distribution of Age (1972)", x = "Age", y = "Count")

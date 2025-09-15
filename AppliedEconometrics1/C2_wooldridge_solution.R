@@ -48,3 +48,5 @@ sd_faminc  <- sd(bwght$faminc, na.rm = TRUE)
 c(mean_income = avg_faminc, sd_income = sd_faminc)
 
 
+ols<-lm(bwght~cigs,data=bwght)
+summary(ols)
