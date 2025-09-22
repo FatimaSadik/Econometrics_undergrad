@@ -1,8 +1,9 @@
+#Visualizing Unbiasness
 set.seed(123)
 
 # Parameters
-beta0 <- 1
-beta1 <- 2
+beta0 <- 1 #true values
+beta1 <- 2 #true values
 n <- 50       # sample size
 R <- 1000     # number of replications
 
