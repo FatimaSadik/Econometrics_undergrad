@@ -20,3 +20,5 @@ residual
 add_sqft <-coef(model1)[3]/ coef(model1)[2]
 add_sqft
 
+model2<-lm(lprice~lsqrft+bdrms,data=hprice1)
+summary(model2)
