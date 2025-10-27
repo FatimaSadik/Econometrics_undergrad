@@ -1,0 +1,11 @@
+library(wooldridge)
+df<-ceosal2
+names(df)
+summary(df)
+model1<-lm(lsalary~lsales+lmktval, data=df)
+summary(model1)
+model2<-lm(lsalary~lsales+lmktval+profits, data=df)
+summary(model2)
+model3<-lm(lsalary~lsales+lmktval+profits+ceoten, data=df)
+summary(model3)
+cor(df$profits,df$lmktval)
