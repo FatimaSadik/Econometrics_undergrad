@@ -3,6 +3,7 @@ data(hprice1)
 names(hprice1)
 model1<-lm(price~sqrft+bdrms,data=hprice1)
 summary(model1)
+
 coef(model1)["bdrms"] + coef(model1)["sqrft"] * 140
 r2 <- summary(model1)$r.squared
 
