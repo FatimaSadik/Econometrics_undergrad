@@ -1,0 +1,19 @@
+library(wooldridge)
+library(lmtest)
+library(sandwich)
+data("meap00_01")
+names(meap00_01)
+model1<-lm(math4~lunch+lenroll+lexppp,data=meap00_01)
+summary(model1)
+#Robust SE HAC
+vcov<-vcovHAC(model1,type="HC1")
+coeftest(model1,vcov=vcov)
+#WLS
+meap00_01$yhat<-model1$fitted.values
+meap00_01$uhat<-model1$residuals
+meap00_01$uhat2<-(meap00_01$uhat)^2
+model2<-lm(log(uhat2)~yhat+I(yhat^2),data=meap00_01)
+meap00_01$g<-model2$fitted.values
+meap00_01$eg<-exp(meap00_01$g)
+wls<-lm(math4~lunch+lenroll+lexppp,data=meap00_01,weight=eg)
+summary(wls)        
