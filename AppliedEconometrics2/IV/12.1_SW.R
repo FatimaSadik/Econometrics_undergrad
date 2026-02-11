@@ -74,6 +74,12 @@ stargazer(iv, iv2, type = "html",
 #save in fertility df
 
 #stage 2
-#regress weeks worked om x_hat
+#regress weeks worked on x_hat
 
 #compare with ivreg coefficient
+
+#Instrument Relevance 
+
+#Run first stage and check its Fstat and make a conclusion
+
+

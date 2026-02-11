@@ -24,6 +24,3 @@ summary(model3)
 iv<-ivreg(lwage~educ|fatheduc, data=mroz)
 summary(iv)
 coeftest(iv,vcov=vcovHC, type="HC1")
-# Over identified 
-iv2<-ivreg(lwage~educ|fatheduc+motheduc, data=mroz)
-summary(iv2)

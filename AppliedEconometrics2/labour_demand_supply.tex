@@ -1,0 +1,36 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\begin{document}
+
+\section*{Female Labor Supply and Labor Demand (Mroz Data)}
+
+In the labor market for married women, wages and hours of work are jointly determined by labor supply and labor demand. Consider the following structural model:
+
+\subsection*{Labor Supply (LS)}
+
+\begin{equation}
+hrs_i = \beta_0 + \beta_1 \, lwage_i + \beta_2 \, educ_i + \beta_3 \, age_i + \beta_4 \, kidslt6_i + \beta_5 \, nwifeinc_i + u_i
+\end{equation}
+
+\subsection*{Labor Demand (LD)}
+
+\begin{equation}
+lwage_i = \gamma_0 + \gamma_1 \, hrs_i + \gamma_2 \, educ_i + \gamma_3 \, exper_i + \gamma_4 \, exper_i^2 + v_i
+\end{equation}
+
+\subsection*{Variable Definitions}
+
+\begin{itemize}
+  \item $hrs$: Annual hours worked  
+  \item $lwage$: Log of hourly wage  
+  \item $educ$: Years of education  
+  \item $age$: Woman’s age  
+  \item $kidslt6$: Number of children under 6  
+  \item $nwifeinc$: Husband’s income  
+  \item $exper$: Labor market experience  
+\end{itemize}
+
+\end{document}
