@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.11.1)  11 FEB 2026 14:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.11.1)  12 FEB 2026 11:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -114,8 +114,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 nd-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count295
-)
-No file labour_demand_supply.aux.
+) (labour_demand_supply.aux)
 \openout1 = `labour_demand_supply.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
@@ -132,12 +131,8 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 6.
 LaTeX Font Info:    ... okay on input line 6.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 6.
 LaTeX Font Info:    ... okay on input line 6.
-
-Overfull \hbox (8.79982pt too wide) in paragraph at lines 8--8
-[]\OT1/cmr/bx/n/17.28 Female La-bor Sup-ply and La-bor De-mand (Mroz
- []
-
 LaTeX Font Info:    Trying to load font information for U+msa on input line 14.
+
 
 (C:\Users\fatimasadik\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -151,20 +146,21 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [1
 
 {C:/Users/fatimasadik/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-(labour_demand_supply.aux)
+
+[2] (labour_demand_supply.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-10-09>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 1691 strings out of 468079
- 24394 string characters out of 5422847
- 438722 words of memory out of 5000000
- 30399 multiletter control sequences out of 15000+600000
- 633914 words of font info for 63 fonts, out of 8000000 for 9000
+ 1698 strings out of 468079
+ 24701 string characters out of 5422847
+ 440722 words of memory out of 5000000
+ 30403 multiletter control sequences out of 15000+600000
+ 634261 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 56i,5n,65p,238b,122s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 56i,6n,65p,238b,201s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\fatimasadik\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
 0\tcrm1200.pk><C:/Users/fatimasadik/AppData/Local/Programs/MiKTeX/fonts/type1/p
 ublic/amsfonts/cm/cmbx12.pfb><C:/Users/fatimasadik/AppData/Local/Programs/MiKTe
@@ -172,10 +168,11 @@ X/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/fatimasadik/AppData/Local
 /Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/fatimasadik
 /AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Use
 rs/fatimasadik/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr
-8.pfb>
-Output written on labour_demand_supply.pdf (1 page, 64797 bytes).
+8.pfb><C:/Users/fatimasadik/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
+sfonts/cm/cmti12.pfb>
+Output written on labour_demand_supply.pdf (2 pages, 80882 bytes).
 PDF statistics:
- 36 PDF objects out of 1000 (max. 8388607)
+ 44 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

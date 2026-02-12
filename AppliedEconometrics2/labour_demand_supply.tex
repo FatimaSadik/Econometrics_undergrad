@@ -5,7 +5,7 @@
 
 \begin{document}
 
-\section*{Female Labor Supply and Labor Demand (Mroz Data)}
+\section*{Applied Econometrics II-Lab}
 
 In the labor market for married women, wages and hours of work are jointly determined by labor supply and labor demand. Consider the following structural model:
 
@@ -32,5 +32,33 @@ lwage_i = \gamma_0 + \gamma_1 \, hrs_i + \gamma_2 \, educ_i + \gamma_3 \, exper_
   \item $nwifeinc$: Husband’s income  
   \item $exper$: Labor market experience  
 \end{itemize}
+\begin{enumerate}
+    \item Explain why $lwage$ is endogenous in the labor supply equation.
+    \item Explain why $hrs$ is endogenous in the labor demand equation.
+    \item What happens if both equations are estimated using Ordinary Least Squares (OLS)?
+
+
+
+
+
+    \item Which variables can be used as instruments for $lwage$ in the labor supply equation?
+    \item Which variables can be used as instruments for $hrs$ in the labor demand equation?
+    \item Explain why these instruments are valid. Your answer should discuss both \textit{relevance} and \textit{exogeneity}.
+
+
+
+
+Using the Mroz dataset from Wooldridge, do the following:
+
+
+    \item Estimate the labor supply equation using OLS.
+    \item Estimate the labor demand equation using OLS.
+    \item Estimate both equations using Two-Stage Least Squares (2SLS).
+    \item Compare the OLS and IV estimates of:
+    \begin{itemize}
+        \item the wage effect on hours,
+        \item the hours effect on wages.
+    \end{itemize}
+\end{enumerate}
 
 \end{document}
