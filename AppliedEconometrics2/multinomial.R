@@ -20,7 +20,9 @@ summary(model2)
 #females are more likely to choose a 2 year college over no-college as compared to males
 #females are less likely to choose a 4 year college over no-college as compared to males
 nels_small$psechoice1<-factor(nels_small$psechoice)
-model3<-polr(psechoice1~grades,data=nels_small,method="probit")
+#ordered logit
+model3<-polr(psechoice1~grades,data=nels_small,method="logistic")
 summary(model3)
 #coefficient of grades is negative, that is the probability of attending a 4 year college (best outcome)
 #decreases as grades worsen and probability of the worst outcome increases
+### Marginal effects ordered logistic and multinomial?
