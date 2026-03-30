@@ -31,8 +31,9 @@ summary(phillips_static)
 #testing for serial correlation
 uhat<-phillips_static$residuals
 L.uhat<-lag(uhat,n=1)
-serial_corr<-lm(uhat~L.uhat)
+serial_corr<-lm(uhat~L.uhat-1)
 summary(serial_corr)
+cor(uhat,L.uhat,use="complete.obs")
 
 #Durbin Watson Test
 dw_test <- durbinWatsonTest(phillips_static)

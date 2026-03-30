@@ -42,3 +42,7 @@ AME <- data.frame(NoCollege = mean(me1),
                   TwoYear   = mean(me2),
                   FourYear  = mean(me3))
 AME
+
+
+
+#Find out Marginal Effect at representative value (grade=7) for each college choice

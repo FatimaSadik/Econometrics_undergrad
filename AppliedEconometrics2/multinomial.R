@@ -26,3 +26,38 @@ summary(model3)
 #coefficient of grades is negative, that is the probability of attending a 4 year college (best outcome)
 #decreases as grades worsen and probability of the worst outcome increases
 ### Marginal effects ordered logistic and multinomial?
+
+probs <- predict(model1, type = "probs")
+head(probs)
+coef(model1)
+# Extract coefficients
+b <- coef(model1)
+
+b2 <- b["2", "grades"]   # 2-year
+b3 <- b["3", "grades"]   # 4-year
+b1 <- 0                  # base
+
+# Predicted probabilities
+p1 <- probs[,1]
+p2 <- probs[,2]
+p3 <- probs[,3]
+
+# Weighted average beta
+beta_bar <- p1*b1 + p2*b2 + p3*b3
+
+# Marginal effects
+me1 <- p1*(b1 - beta_bar)
+me2 <- p2*(b2 - beta_bar)
+me3 <- p3*(b3 - beta_bar)
+
+# Average Marginal Effects
+mean(me1)
+mean(me2)
+mean(me3)
+
+
+library(mfx)
+ologit_model <- model3
+
+ologitmfx(psechoice1 ~ grades,
+          data = nels_small)
