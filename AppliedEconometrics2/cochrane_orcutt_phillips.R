@@ -12,6 +12,13 @@ phillips_static <- lm(inf ~ unem, data = phillips)
 uhat <- phillips_static$residuals
 L.uhat <- lag(uhat, n = 1)
 
+
+#Durbin Watson Test
+dw_test <- durbinWatsonTest(phillips_static)
+dw_statistic <- sum(diff(uhat)^2) / sum(uhat^2)
+print(dw_statistic)
+print(dw_test)
+
 serial_corr <- lm(uhat ~ L.uhat - 1)
 rho <- coef(serial_corr)[1]   # estimated rho
 rho
@@ -27,6 +34,12 @@ phillips$unem_star <- phillips$unem - rho * phillips$unem_lag
 # drop NA (first observation lost)
 phillips_co <- na.omit(phillips)
 
-# run transformed regression
+# run transformed regression gls
 cochrane_orcutt <- lm(inf_star ~ unem_star, data = phillips_co)
 summary(cochrane_orcutt)
+
+uhat_co <- cochrane_orcutt$residuals
+plot(uhat_co)
+
+wn<-rnorm(100,mean=0,sd=1)
+plot(wn)
