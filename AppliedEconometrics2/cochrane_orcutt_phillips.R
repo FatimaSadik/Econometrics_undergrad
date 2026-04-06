@@ -8,10 +8,12 @@ library(dplyr)
 
 data("phillips")
 phillips_static <- lm(inf ~ unem, data = phillips)
+summary(phillips_static)
 
 uhat <- phillips_static$residuals
+plot(uhat)
 L.uhat <- lag(uhat, n = 1)
-
+cor(uhat,L.uhat,use="complete.obs")
 
 #Durbin Watson Test
 dw_test <- durbinWatsonTest(phillips_static)
@@ -34,12 +36,13 @@ phillips$unem_star <- phillips$unem - rho * phillips$unem_lag
 # drop NA (first observation lost)
 phillips_co <- na.omit(phillips)
 
-# run transformed regression gls
+# run transformed regression gls (FGL)
 cochrane_orcutt <- lm(inf_star ~ unem_star, data = phillips_co)
 summary(cochrane_orcutt)
 
 uhat_co <- cochrane_orcutt$residuals
 plot(uhat_co)
-
+dw_test2 <- durbinWatsonTest(cochrane_orcutt)
+print(dw_test2)
 wn<-rnorm(100,mean=0,sd=1)
 plot(wn)
