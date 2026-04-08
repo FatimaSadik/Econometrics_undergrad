@@ -23,7 +23,7 @@ y <- cumsum(rnorm(n))
 f_data <- data.frame(x, y)
 
 # Plot the time series
-ggplot(data, aes(x = 1:n)) +
+ggplot(f_data, aes(x = 1:n)) +
   geom_line(aes(y = x, color = "x"), size = 1) +
   geom_line(aes(y = y, color = "y"), size = 1) +
   labs(title = "Random Walks: Spurious Regression Example",

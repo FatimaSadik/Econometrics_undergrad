@@ -4,7 +4,7 @@ library(stats)
 n <- 100  # Number of observations
 phi <- -0.5  # MA parameter
 epsilon <- rnorm(n)  # White noise
-y <- numeric(n)
+y1 <- numeric(n)
 for (i in 2:n) {
   y[i] <- phi * epsilon[i - 1] + epsilon[i]
 }
@@ -33,3 +33,20 @@ pacf(x)
 #For the autoregressive model of order 1 with a fairly high coefficient –
 #i.e., relatively close to 1 – the autocorrelation function would be expected
 #to die away relatively slowly
+
+options(repr.plot.width=10, repr.plot.height=10) # Adjust width and height as needed
+plot(x, type = 'l', main = "Simulated AR(1) Process", ylab = "Value")
+
+
+#simulate AR(2)
+x2 <- numeric(n)
+
+x2[1]<-0
+x2[2] <- 0
+for (i in 3:n) {
+  x2[i] <- 0.5 * x2[i - 1] + 0.2*x2[i-2]+epsilon[i]
+}
+
+
+options(repr.plot.width=10, repr.plot.height=10) # Adjust width and height as needed
+plot(x2, type = 'l', main = "Simulated AR(2) Process", ylab = "Value")
