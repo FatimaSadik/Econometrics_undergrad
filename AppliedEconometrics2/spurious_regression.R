@@ -33,5 +33,7 @@ ggplot(data, aes(x = 1:n)) +
 # Perform the spurious regression
 regression_result <- lm(y ~ x, data = data)
 summary(regression_result)
+
 ols<-lm(y2~x,data=data)
 summary(ols)
+

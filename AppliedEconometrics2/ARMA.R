@@ -4,7 +4,7 @@ library(stats)
 n <- 100  # Number of observations
 phi <- -0.5  # MA parameter
 epsilon <- rnorm(n)  # White noise
-y1 <- numeric(n)
+y <- numeric(n)
 for (i in 2:n) {
   y[i] <- phi * epsilon[i - 1] + epsilon[i]
 }
@@ -25,8 +25,8 @@ pacf(y,lag.max = 10)
 #simulate AR(1)
 x <- numeric(n)
 x[1]<-0
-for (i in 2:n) {
-  x[i] <- 0.9 * x[i - 1] + epsilon[i]
+for (t in 2:n) {
+  x[t] <- -0.9 * x[t - 1] + epsilon[t]
 }
 acf(x)
 pacf(x)
