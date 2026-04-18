@@ -37,3 +37,6 @@ summary(regression_result)
 ols<-lm(y2~x,data=data)
 summary(ols)
 
+data("AirPassengers")
+plot(AirPassengers)
+

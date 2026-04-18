@@ -5,6 +5,7 @@ UKHP <- read.csv("C:/Users/fatimasadik/OneDrive - Institute of Business Administ
 plot(UKHP$Average_House_Price,type="l")
 acf(UKHP$Average_House_Price,lag.max = 20)
 UKHP$LHP<-log(UKHP$Average_House_Price)
+plot(UKHP$LHP,type="l")
 #plot lhp
 #acf of lhp
 DLHP<-diff(UKHP$LHP)

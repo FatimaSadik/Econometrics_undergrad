@@ -2,7 +2,7 @@ set.seed(123)
 library(stats)
 # Simulate MA(1) process
 n <- 100  # Number of observations
-phi <- -0.5  # MA parameter
+phi <- 0.1  # MA parameter
 epsilon <- rnorm(n)  # White noise
 y <- numeric(n)
 for (i in 2:n) {
@@ -26,10 +26,10 @@ pacf(y,lag.max = 10)
 x <- numeric(n)
 x[1]<-0
 for (t in 2:n) {
-  x[t] <- -0.9 * x[t - 1] + epsilon[t]
+  x[t] <- 0.7 * x[t - 1] + epsilon[t]
 }
-acf(x)
-pacf(x)
+acf(x,lag.max = 5)
+pacf(x,lag.max = 5)
 #For the autoregressive model of order 1 with a fairly high coefficient –
 #i.e., relatively close to 1 – the autocorrelation function would be expected
 #to die away relatively slowly
