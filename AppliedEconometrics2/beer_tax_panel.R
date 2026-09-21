@@ -66,7 +66,7 @@ coeftest(fatal_fe_mod, vcov. = vcovHC, type = "HC1")
 fatal_tfe_lm_mod <- lm(fatal_rate ~ beertax + year - 1, data = Fatalities)
 fatal_tfe_lm_mod
 # print summary using robust standard errors
-coeftest(fatal_tfe_mod, vcov. = vcovHC, type = "HC1")
+coeftest(fatal_tfe_lm_mod, vcov. = vcovHC, type = "HC1")
 
 ##time and state fixed effects both
 
